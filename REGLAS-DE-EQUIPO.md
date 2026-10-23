@@ -69,7 +69,9 @@ fix(inventario): corregir el cálculo del stock
 
 - Crear commits pequeños y coherentes; evitar mensajes como `cambios`, `arreglos` o `update`.
 - Relacionar el trabajo con su Issue. Añadir `Refs #<número>` en el cuerpo del commit; usar `Closes #<número>` solo cuando el commit cierre realmente la Issue.
+- Antes de crear un commit, revisar este documento para comprobar que se cumplen las normas del equipo.
 - Revisar los archivos preparados y ejecutar las comprobaciones pertinentes antes de confirmar el commit.
+- No añadir a Copilot como autor ni coautor del commit; el autor debe ser el integrante responsable del cambio.
 - No incluir credenciales, archivos temporales ni cambios ajenos a la tarea.
 - Los commits se realizan en ramas de trabajo, nunca directamente en `main` ni en `dev`.
 
