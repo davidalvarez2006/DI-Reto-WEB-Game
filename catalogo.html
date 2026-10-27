@@ -29,10 +29,10 @@
 
       <div class="header-user">
         <div class="user-details">
-          <div>Carlos Gestor</div>
+          <div>Marquitos</div>
           <div>Jefe de Almacén</div>
         </div>
-        <div class="user-avatar">CG</div>
+        <div class="user-avatar">MQ</div>
         <a class="header-notifications" href="inventario.html" aria-label="Almacén, 7 notificaciones">
           <img src="img/iconos/almacen.svg" alt="">
           <div>7</div>
@@ -71,8 +71,106 @@
   </header>
 
   <!-- FIN DEL ENCABEZADO COMPARTIDO. -->
-  <!-- CONTENIDO PROPIO DEL CATÁLOGO: empezar a desarrollar esta página aquí. -->
-  <main>
+  <main class="catalog-main">
+    <input class="filter-state visually-hidden" type="radio" name="category" id="category-all" value="all" checked>
+    <input class="filter-state visually-hidden" type="radio" name="category" id="category-ps5" value="ps5">
+    <input class="filter-state visually-hidden" type="radio" name="category" id="category-switch" value="switch">
+    <input class="filter-state visually-hidden" type="radio" name="category" id="category-xbox" value="xbox">
+    <input class="filter-state visually-hidden" type="radio" name="category" id="category-digital" value="digital">
+    <input class="filter-state visually-hidden" type="radio" name="category" id="category-collectible" value="collectible">
+    <input class="filter-state visually-hidden" type="radio" name="stock" id="stock-all" value="all" checked>
+    <input class="filter-state visually-hidden" type="radio" name="stock" id="stock-in-stock" value="in-stock">
+    <input class="filter-state visually-hidden" type="radio" name="stock" id="stock-low-stock" value="low-stock">
+    <input class="filter-state visually-hidden" type="radio" name="stock" id="stock-out-of-stock" value="out-of-stock">
+
+    <div class="catalog-container">
+      <header class="catalog-heading">
+        <h1>Catálogo Visual de Productos</h1>
+        <p>Visualiza el stock disponible con código visual de estado</p>
+      </header>
+
+      <section class="catalog-toolbar" aria-label="Filtros de productos">
+        <span class="filter-symbol" aria-hidden="true">☷</span>
+        <details class="filter-dropdown" id="category-dropdown" name="catalog-filters">
+          <summary><span class="filter-current" id="category-label-all">Todas las Categorías</span><span class="filter-current" id="category-label-ps5">PS5</span><span class="filter-current" id="category-label-switch">Nintendo Switch</span><span class="filter-current" id="category-label-xbox">Xbox Series</span><span class="filter-current" id="category-label-digital">Digital/Físico</span><span class="filter-current" id="category-label-collectible">Coleccionable</span><span class="filter-chevron" aria-hidden="true"></span></summary>
+          <div class="filter-options">
+            <label class="filter-option" for="category-all">Todas las Categorías</label>
+            <label class="filter-option" for="category-ps5">PS5</label>
+            <label class="filter-option" for="category-switch">Nintendo Switch</label>
+            <label class="filter-option" for="category-xbox">Xbox Series</label>
+            <label class="filter-option" for="category-digital">Digital/Físico</label>
+            <label class="filter-option" for="category-collectible">Coleccionable</label>
+          </div>
+        </details>
+        <details class="filter-dropdown" id="stock-dropdown" name="catalog-filters">
+          <summary><span class="filter-current" id="stock-label-all">Todos los Estados de Stock</span><span class="filter-current" id="stock-label-in-stock">En Stock (&gt;10 ud)</span><span class="filter-current" id="stock-label-low-stock">Stock Bajo (1-10 ud)</span><span class="filter-current" id="stock-label-out-of-stock">Agotado (0 ud)</span><span class="filter-chevron" aria-hidden="true"></span></summary>
+          <div class="filter-options">
+            <label class="filter-option" for="stock-all">Todos los Estados de Stock</label>
+            <label class="filter-option" for="stock-in-stock">En Stock (&gt;10 ud)</label>
+            <label class="filter-option" for="stock-low-stock">Stock Bajo (1-10 ud)</label>
+            <label class="filter-option" for="stock-out-of-stock">Agotado (0 ud)</label>
+          </div>
+        </details>
+        <p class="catalog-count">7 productos catalogados</p>
+      </section>
+
+      <ul class="stock-legend" aria-label="Leyenda de estados de stock">
+        <li><span class="stock-dot stock-dot--available"></span>En Stock (&gt;10 ud)</li>
+        <li><span class="stock-dot stock-dot--low"></span>Stock Bajo (1-10 ud)</li>
+        <li><span class="stock-dot stock-dot--empty"></span>Agotado (0 ud)</li>
+      </ul>
+
+      <section class="product-grid" aria-label="Productos disponibles">
+        <article class="product-card" data-category="ps5" data-stock="in-stock">
+          <div class="product-image-wrap"><img src="img/productos/ps5-slim.png" alt="PlayStation 5 Slim Digital con mando DualSense. En stock: 14 unidades."></div>
+          <p class="product-category">PS5</p>
+          <h2>PlayStation 5 Slim Digital</h2>
+          <div class="product-purchase"><p><span>PVP Base</span><strong>449.99 €</strong></p><button type="button" class="add-button" aria-label="Añadir PlayStation 5 Slim Digital">+ COMPRAR / +1</button></div>
+        </article>
+
+        <article class="product-card" data-category="switch" data-stock="low-stock">
+          <div class="product-image-wrap"><img src="img/productos/zelda-switch.png" alt="The Legend of Zelda: Tears of the Kingdom para Nintendo Switch. Stock bajo: 4 unidades."></div>
+          <p class="product-category">NINTENDO SWITCH</p>
+          <h2>The Legend of Zelda: Tears of the Kingdom</h2>
+          <div class="product-purchase"><p><span>PVP Base</span><strong>59.95 €</strong></p><button type="button" class="add-button" aria-label="Añadir The Legend of Zelda: Tears of the Kingdom">+ COMPRAR / +1</button></div>
+        </article>
+
+        <article class="product-card" data-category="ps5" data-stock="in-stock">
+          <div class="product-image-wrap"><img src="img/productos/dualsense.png" alt="Mando inalámbrico DualSense blanco para PlayStation 5. En stock: 22 unidades."></div>
+          <p class="product-category">PS5</p>
+          <h2>Mando Inalámbrico DualSense White</h2>
+          <div class="product-purchase"><p><span>PVP Base</span><strong>69.99 €</strong></p><button type="button" class="add-button" aria-label="Añadir Mando Inalámbrico DualSense White">+ COMPRAR / +1</button></div>
+        </article>
+
+        <article class="product-card" data-category="ps5" data-stock="out-of-stock">
+          <div class="product-image-wrap"><img src="img/productos/fc24.png" alt="Videojuego EA Sports FC 24 para PlayStation 5. Agotado."></div>
+          <p class="product-category">PS5</p>
+          <h2>EA SPORTS FC 24</h2>
+          <div class="product-purchase"><p><span>PVP Base</span><strong>39.99 €</strong></p><button type="button" class="add-button" aria-label="Añadir EA SPORTS FC 24" disabled>+ COMPRAR / +1</button></div>
+        </article>
+
+        <article class="product-card" data-category="digital" data-stock="in-stock">
+          <div class="product-image-wrap"><img src="img/productos/tarjeta-game.png" alt="Tarjeta regalo GAME de 50 euros. En stock: 100 unidades."></div>
+          <p class="product-category">DIGITAL/FÍSICO</p>
+          <h2>Tarjeta Regalo GAME 50€</h2>
+          <div class="product-purchase"><p><span>PVP Base</span><strong>50.00 €</strong></p><button type="button" class="add-button" aria-label="Añadir Tarjeta Regalo GAME 50 euros">+ COMPRAR / +1</button></div>
+        </article>
+
+        <article class="product-card" data-category="xbox" data-stock="low-stock">
+          <div class="product-image-wrap"><img src="img/productos/mando-xbox.png" alt="Mando Xbox Wireless Carbon Black. Stock bajo: 3 unidades."></div>
+          <p class="product-category">XBOX SERIES</p>
+          <h2>Mando Xbox Wireless Carbon Black</h2>
+          <div class="product-purchase"><p><span>PVP Base</span><strong>42.95 €</strong></p><button type="button" class="add-button" aria-label="Añadir Mando Xbox Wireless Carbon Black">+ COMPRAR / +1</button></div>
+        </article>
+
+        <article class="product-card" data-category="collectible" data-stock="low-stock">
+          <div class="product-image-wrap"><img src="img/productos/estatua-cyberpunk.png" alt="Estatua coleccionable de Cyberpunk 2077 V. Stock bajo: 2 unidades."></div>
+          <p class="product-category">COLECCIONABLE</p>
+          <h2>Estatua Cyberpunk 2077 V</h2>
+          <div class="product-purchase"><p><span>PVP Base</span><strong>89.90 €</strong></p><button type="button" class="add-button" aria-label="Añadir Estatua Cyberpunk 2077 V">+ COMPRAR / +1</button></div>
+        </article>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -99,5 +197,6 @@
     </div>
     <p class="footer-legal">© 2025 GAME stock Iberia S.L. Todos los derechos reservados. Guía de Estilo v2.0</p>
   </footer>
+
 </body>
 </html>
