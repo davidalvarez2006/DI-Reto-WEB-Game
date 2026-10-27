@@ -291,6 +291,71 @@ body {
 }
 /* FIN NAVEGACIÓN COMPARTIDA. */
 
+/* INICIO FOOTER COMPARTIDO. */
+.site-footer {
+  padding: var(--spacing-24) var(--spacing-16) var(--spacing-12);
+  color: var(--color-surface);
+  background: var(--color-navy);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--spacing-16);
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  color: var(--color-surface);
+  font-size: var(--font-size-brand);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-brand-mark {
+  display: grid;
+  flex: 0 0 var(--size-avatar);
+  width: var(--size-avatar);
+  height: var(--size-avatar);
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-surface);
+  background: var(--color-brand);
+}
+
+.footer-description,
+.footer-contact p,
+.footer-location p,
+.footer-legal {
+  margin: var(--spacing-8) 0 0;
+  color: #d5dff5;
+  font-size: var(--font-size-secondary);
+  line-height: 1.5;
+}
+
+.footer-contact h2,
+.footer-location h2 {
+  margin: 0;
+  color: var(--color-surface);
+  font-size: var(--font-size-body);
+}
+
+.footer-contact p + p,
+.footer-location p + p {
+  margin-top: var(--spacing-4);
+}
+
+.footer-legal {
+  max-width: 80rem;
+  margin: var(--spacing-24) auto 0;
+  text-align: center;
+}
+/* FIN FOOTER COMPARTIDO. */
+
 /* INICIO RESPONSIVE COMPARTIDO: ajustes del encabezado y navegación. */
 @media (min-width: 40rem) {
   .header-main {
@@ -336,6 +401,16 @@ body {
   .nav-links a {
     min-height: 3.2rem;
     padding: 0 var(--spacing-16);
+  }
+
+  .site-footer {
+    padding-right: var(--spacing-24);
+    padding-left: var(--spacing-24);
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--spacing-24);
   }
 
 }

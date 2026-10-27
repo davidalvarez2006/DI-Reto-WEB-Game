@@ -1,2 +1,11 @@
 /* INICIO ESTILOS DE CATÁLOGO. */
+.catalog-page {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.catalog-page main {
+	flex: 1;
+}
 /* FIN ESTILOS DE CATÁLOGO. */
