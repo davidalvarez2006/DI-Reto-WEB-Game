@@ -72,7 +72,205 @@
 
   <!-- FIN DEL ENCABEZADO COMPARTIDO. -->
   <!-- CONTENIDO PROPIO DEL INVENTARIO: empezar a desarrollar esta página aquí. -->
-  <main>
+  <main class="contenedor-principal">
+
+    <!-- Encabezado de la Sección de Inventario -->
+    <div class="encabezado-seccion">
+      <div class="texto-seccion">
+        <h1 class="titulo-pagina">Gestión Tabla de Inventario</h1>
+        <p class="subtitulo-pagina">Control físico de ubicación en estanterías y unidades en tiempo real</p>
+      </div>
+      <a href="alta.html" class="boton-nuevo-producto">+ Añadir Nuevo Producto</a>
+    </div>
+
+  <section class="resumen-inventario" aria-label="Resumen de Inventario">
+      <article class="tarjeta tarjeta-resumen">
+        <div class="icono-resumen icono-azul">
+          <svg role="img" aria-label="Total de productos" viewBox="0 0 24 24">
+            <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"></path>
+            <path d="m4.5 7.8 7.5 4.4 7.5-4.4M12 12.2V21"></path>
+          </svg>
+        </div>
+        <div class="datos-resumen">
+          <span class="valor-resumen">7</span>
+          <span class="etiqueta-resumen">Productos registrados</span>
+        </div>
+      </article>
+
+      <article class="tarjeta tarjeta-resumen">
+        <div class="icono-resumen icono-verde">
+          <svg role="img" aria-label="Total de unidades" viewBox="0 0 24 24">
+            <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"></path>
+            <path d="m4.5 7.8 7.5 4.4 7.5-4.4M12 12.2V21M8 5.3l8 4.6"></path>
+          </svg>
+        </div>
+        <div class="datos-resumen">
+          <span class="valor-resumen">145</span>
+          <span class="etiqueta-resumen">Unidades en almacén</span>
+        </div>
+      </article>
+
+      <article class="tarjeta tarjeta-resumen alerta-parpadeante">
+        <div class="icono-resumen icono-naranja">
+          <svg role="img" aria-label="Alerta de stock bajo" viewBox="0 0 24 24">
+            <path d="M10.3 4.5a2 2 0 0 1 3.4 0l7.2 12.4a2 2 0 0 1-1.7 3H4.8a2 2 0 0 1-1.7-3l7.2-12.4Z"></path>
+            <path d="M12 9v4m0 3h.01"></path>
+          </svg>
+        </div>
+        <div class="datos-resumen">
+          <span class="valor-resumen">3</span>
+          <span class="etiqueta-resumen">Productos con stock bajo</span>
+        </div>
+      </article>
+
+      <article class="tarjeta tarjeta-resumen">
+        <div class="icono-resumen icono-rojo">
+          <svg role="img" aria-label="Producto agotado" viewBox="0 0 24 24">
+            <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"></path>
+            <path d="m4.5 7.8 7.5 4.4 7.5-4.4M12 12.2V21m-3-9 6 6m0-6-6 6"></path>
+          </svg>
+        </div>
+        <div class="datos-resumen">
+          <span class="valor-resumen">1</span>
+          <span class="etiqueta-resumen">Producto agotado</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- Tabla Principal de Productos del Almacén -->
+    <section class="tarjeta contenedor-tabla-inventario">
+      <div class="tabla-scroll">
+        <table class="tabla-productos">
+          <thead>
+            <tr>
+              <th scope="col">SKU / CÓDIGO</th>
+              <th scope="col">PRODUCTO</th>
+              <th scope="col">CATEGORÍA</th>
+              <th scope="col">PLATAFORMA</th>
+              <th scope="col">UBICACIÓN</th>
+              <th scope="col">UNIDADES</th>
+              <th scope="col">PRECIO UNID.</th>
+              <th scope="col">ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="campo-sku">GAME-1001</td>
+              <td class="campo-nombre-producto">PlayStation 5 Slim Digital</td>
+              <td class="campo-categoria">Consolas</td>
+              <td class="campo-plataforma">PS5</td>
+              <td><span class="etiqueta-almacen">Estantería A-01</span></td>
+              <td><span class="etiqueta-stock stock-alto">14 ud.</span></td>
+              <td class="campo-precio">449.99 €</td>
+              <td class="campo-acciones">
+                <button class="boton-accion boton-sumar" aria-label="Aumentar una unidad">+</button>
+                <button class="boton-accion boton-restar" aria-label="Disminuir una unidad">-</button>
+                <button class="boton-accion boton-eliminar" aria-label="Eliminar producto de inventario">🗑</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="campo-sku">GAME-1002</td>
+              <td class="campo-nombre-producto">The Legend of Zelda: Tears of the Kingdom</td>
+              <td class="campo-categoria">Videojuegos</td>
+              <td class="campo-plataforma">Nintendo Switch</td>
+              <td><span class="etiqueta-almacen">Estantería B-03</span></td>
+              <td><span class="etiqueta-stock stock-bajo">4 ud.</span></td>
+              <td class="campo-precio">59.95 €</td>
+              <td class="campo-acciones">
+                <button class="boton-accion boton-sumar" aria-label="Aumentar una unidad">+</button>
+                <button class="boton-accion boton-restar" aria-label="Disminuir una unidad">-</button>
+                <button class="boton-accion boton-eliminar" aria-label="Eliminar producto de inventario">🗑</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="campo-sku">GAME-1003</td>
+              <td class="campo-nombre-producto">Mando Inalámbrico DualSense White</td>
+              <td class="campo-categoria">Electrónica</td>
+              <td class="campo-plataforma">PS5</td>
+              <td><span class="etiqueta-almacen">Estantería A-05</span></td>
+              <td><span class="etiqueta-stock stock-alto">22 ud.</span></td>
+              <td class="campo-precio">69.99 €</td>
+              <td class="campo-acciones">
+                <button class="boton-accion boton-sumar" aria-label="Aumentar una unidad">+</button>
+                <button class="boton-accion boton-restar" aria-label="Disminuir una unidad">-</button>
+                <button class="boton-accion boton-eliminar" aria-label="Eliminar producto de inventario">🗑</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="campo-sku">GAME-1004</td>
+              <td class="campo-nombre-producto">EA SPORTS FC 24</td>
+              <td class="campo-categoria">Videojuegos</td>
+              <td class="campo-plataforma">PS5</td>
+              <td><span class="etiqueta-almacen">Estantería C-02</span></td>
+              <td><span class="etiqueta-stock stock-agotado">0 ud.</span></td>
+              <td class="campo-precio">39.99 €</td>
+              <td class="campo-acciones">
+                <button class="boton-accion boton-sumar" aria-label="Aumentar una unidad">+</button>
+                <button class="boton-accion boton-restar" aria-label="Disminuir una unidad">-</button>
+                <button class="boton-accion boton-eliminar" aria-label="Eliminar producto de inventario">🗑</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="campo-sku">GAME-1005</td>
+              <td class="campo-nombre-producto">Tarjeta Regalo GAME 50€</td>
+              <td class="campo-categoria">Tarjetas Regalo</td>
+              <td class="campo-plataforma">Digital/Físico</td>
+              <td><span class="etiqueta-almacen">Caja Fuerte C-01</span></td>
+              <td><span class="etiqueta-stock stock-alto">100 ud.</span></td>
+              <td class="campo-precio">50.00 €</td>
+              <td class="campo-acciones">
+                <button class="boton-accion boton-sumar" aria-label="Aumentar una unidad">+</button>
+                <button class="boton-accion boton-restar" aria-label="Disminuir una unidad">-</button>
+                <button class="boton-accion boton-eliminar" aria-label="Eliminar producto de inventario">🗑</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="campo-sku">GAME-1006</td>
+              <td class="campo-nombre-producto">Mando Xbox Wireless Carbon Black</td>
+              <td class="campo-categoria">Seminuevos</td>
+              <td class="campo-plataforma">Xbox Series</td>
+              <td><span class="etiqueta-almacen">Estantería D-01</span></td>
+              <td><span class="etiqueta-stock stock-bajo">3 ud.</span></td>
+              <td class="campo-precio">42.95 €</td>
+              <td class="campo-acciones">
+                <button class="boton-accion boton-sumar" aria-label="Aumentar una unidad">+</button>
+                <button class="boton-accion boton-restar" aria-label="Disminuir una unidad">-</button>
+                <button class="boton-accion boton-eliminar" aria-label="Eliminar producto de inventario">🗑</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="campo-sku">GAME-1007</td>
+              <td class="campo-nombre-producto">Estatua Cyberpunk 2077 V</td>
+              <td class="campo-categoria">Merchandising</td>
+              <td class="campo-plataforma">Coleccionable</td>
+              <td><span class="etiqueta-almacen">Estantería E-10</span></td>
+              <td><span class="etiqueta-stock stock-bajo">2 ud.</span></td>
+              <td class="campo-precio">89.90 €</td>
+              <td class="campo-acciones">
+                <button class="boton-accion boton-sumar" aria-label="Aumentar una unidad">+</button>
+                <button class="boton-accion boton-restar" aria-label="Disminuir una unidad">-</button>
+                <button class="boton-accion boton-eliminar" aria-label="Eliminar producto de inventario">🗑</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pie de la Tabla -->
+      <div class="pie-tabla">
+        <span class="contador-registros">Mostrando 7 de 7 productos</span>
+        <span class="estado-sincronizacion">🔄 Inventario sincronizado</span>
+      </div>
+    </section>
+
   </main>
+
+  
 </body>
 </html>
