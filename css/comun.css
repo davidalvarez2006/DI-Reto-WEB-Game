@@ -44,11 +44,15 @@
 }
 
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   margin: 0;
   color: var(--color-text);
   background: var(--color-background);
   font-family: var(--font-family);
 }
+
 /* FIN ESTILOS GLOBALES. */
 
 /* INICIO ENCABEZADO COMPARTIDO: marca, buscador, usuario y notificaciones. */
@@ -298,6 +302,7 @@ body {
 
 /* INICIO FOOTER COMPARTIDO. */
 .site-footer {
+  margin-top: auto;
   padding: var(--spacing-24) var(--spacing-16) var(--spacing-12);
   color: var(--color-surface);
   background: var(--color-navy);
