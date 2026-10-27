@@ -5,6 +5,7 @@
   --color-brand: #477eff;
   --color-brand-hover: #82a7ff;
   --color-brand-pressed: #3152c7;
+  --color-campaign: #fde68a;
   --color-text: #172447;
   --color-text-secondary: #55658a;
   --color-background: #f2f5fc;
@@ -17,6 +18,7 @@
   --font-size-secondary: 0.6875rem;
   --font-size-button: 0.75rem;
   --font-size-body: 0.8125rem;
+  --font-size-campaign: 1rem;
   --font-size-navigation: 0.875rem;
   --font-size-brand: 1.5rem;
   --font-size-brand-large: 1.5rem;
@@ -33,8 +35,10 @@
   --border-width: 0.0625rem;
   --border-width-active: 0.125rem;
   --border-radius-control: 0.3rem;
+  --border-radius-card: 0.75rem;
 }
 
+/* INICIO ESTILOS GLOBALES: base compartida por todas las páginas. */
 * {
   box-sizing: border-box;
 }
@@ -45,7 +49,9 @@ body {
   background: var(--color-background);
   font-family: var(--font-family);
 }
+/* FIN ESTILOS GLOBALES. */
 
+/* INICIO ENCABEZADO COMPARTIDO: marca, buscador, usuario y notificaciones. */
 .site-header {
   background: var(--color-surface);
 }
@@ -229,7 +235,9 @@ body {
   font-size: var(--font-size-small);
   line-height: 1;
 }
+/* FIN ENCABEZADO COMPARTIDO. */
 
+/* INICIO NAVEGACIÓN COMPARTIDA: menú principal de las cuatro páginas. */
 .primary-nav {
   border-top: var(--border-width) solid var(--color-border);
   border-bottom: var(--border-width) solid var(--color-border);
@@ -281,7 +289,9 @@ body {
 .nav-links a[aria-current="page"] {
   border-bottom-color: var(--color-brand);
 }
+/* FIN NAVEGACIÓN COMPARTIDA. */
 
+/* INICIO RESPONSIVE COMPARTIDO: ajustes del encabezado y navegación. */
 @media (min-width: 40rem) {
   .header-main {
     gap: var(--spacing-16);
@@ -295,7 +305,9 @@ body {
     padding: 0 var(--spacing-16);
   }
 }
+/* FIN RESPONSIVE COMPARTIDO (40rem). */
 
+/* INICIO RESPONSIVE COMPARTIDO (48rem). */
 @media (min-width: 48rem) {
   .header-main {
     grid-template-columns: minmax(12rem, 1fr) minmax(16rem, 2fr) minmax(12rem, 1fr);
@@ -325,8 +337,11 @@ body {
     min-height: 3.2rem;
     padding: 0 var(--spacing-16);
   }
-}
 
+}
+/* FIN RESPONSIVE COMPARTIDO (48rem). */
+
+/* INICIO RESPONSIVE COMPARTIDO (64rem). */
 @media (min-width: 64rem) {
   .header-main {
     min-height: 5.5rem;
@@ -337,4 +352,6 @@ body {
     padding-right: var(--spacing-24);
     padding-left: var(--spacing-24);
   }
+
 }
+/* FIN RESPONSIVE COMPARTIDO (64rem). */
