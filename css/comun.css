@@ -138,6 +138,11 @@ body {
   font-size: var(--font-size-body);
 }
 
+.site-search input:focus-visible {
+  outline: var(--border-width-active) solid var(--color-brand);
+  outline-offset: 0;
+}
+
 .site-search input::placeholder {
   color: var(--color-text-secondary);
   opacity: 1;
