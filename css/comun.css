@@ -12,6 +12,12 @@
   --color-surface: #ffffff;
   --color-border: #d5dff5;
   --color-navy: #22366b;
+  --color-stock-available-bg: #d1fae5;
+  --color-stock-available-text: #065f46;
+  --color-stock-low-bg: #fef3c7;
+  --color-stock-low-text: #92400e;
+  --color-stock-empty-bg: #ffe4e6;
+  --color-stock-empty-text: #9f1239;
   --font-family: "Lato", Arial, sans-serif;
   --font-size-caption: 0.6875rem;
   --font-size-small: 0.75rem;
