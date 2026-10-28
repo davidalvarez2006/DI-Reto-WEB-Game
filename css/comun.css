@@ -446,3 +446,44 @@ body {
 
 }
 /* FIN RESPONSIVE COMPARTIDO (64rem). */
+
+button,
+.campaign-button,
+.home-product-action,
+.boton-nuevo-producto {
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.home-product-card,
+.product-card {
+  animation: card-entry 240ms ease-out both;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.home-product-card:hover,
+.product-card:hover {
+  transform: translateY(-0.15rem);
+  box-shadow: 0 0.25rem 0.75rem rgb(23 36 71 / 12%);
+}
+
+@keyframes card-entry {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button,
+  .campaign-button,
+  .home-product-action,
+  .boton-nuevo-producto,
+  .home-product-card,
+  .product-card {
+    animation: none;
+    transition: none;
+  }
+}
