@@ -72,17 +72,6 @@
 
   <!-- FIN DEL ENCABEZADO COMPARTIDO. -->
   <main class="catalog-main">
-    <input class="filter-state visually-hidden" type="radio" name="category" id="category-all" value="all" checked>
-    <input class="filter-state visually-hidden" type="radio" name="category" id="category-ps5" value="ps5">
-    <input class="filter-state visually-hidden" type="radio" name="category" id="category-switch" value="switch">
-    <input class="filter-state visually-hidden" type="radio" name="category" id="category-xbox" value="xbox">
-    <input class="filter-state visually-hidden" type="radio" name="category" id="category-digital" value="digital">
-    <input class="filter-state visually-hidden" type="radio" name="category" id="category-collectible" value="collectible">
-    <input class="filter-state visually-hidden" type="radio" name="stock" id="stock-all" value="all" checked>
-    <input class="filter-state visually-hidden" type="radio" name="stock" id="stock-in-stock" value="in-stock">
-    <input class="filter-state visually-hidden" type="radio" name="stock" id="stock-low-stock" value="low-stock">
-    <input class="filter-state visually-hidden" type="radio" name="stock" id="stock-out-of-stock" value="out-of-stock">
-
     <div class="catalog-container">
       <header class="catalog-heading">
         <h1>Catálogo Visual de Productos</h1>
@@ -91,26 +80,28 @@
 
       <section class="catalog-toolbar" aria-label="Filtros de productos">
         <span class="filter-symbol" aria-hidden="true">☷</span>
-        <details class="filter-dropdown" id="category-dropdown" name="catalog-filters">
-          <summary><span class="filter-current" id="category-label-all">Todas las Categorías</span><span class="filter-current" id="category-label-ps5">PS5</span><span class="filter-current" id="category-label-switch">Nintendo Switch</span><span class="filter-current" id="category-label-xbox">Xbox Series</span><span class="filter-current" id="category-label-digital">Digital/Físico</span><span class="filter-current" id="category-label-collectible">Coleccionable</span><span class="filter-chevron" aria-hidden="true"></span></summary>
-          <div class="filter-options">
-            <label class="filter-option" for="category-all">Todas las Categorías</label>
-            <label class="filter-option" for="category-ps5">PS5</label>
-            <label class="filter-option" for="category-switch">Nintendo Switch</label>
-            <label class="filter-option" for="category-xbox">Xbox Series</label>
-            <label class="filter-option" for="category-digital">Digital/Físico</label>
-            <label class="filter-option" for="category-collectible">Coleccionable</label>
-          </div>
-        </details>
-        <details class="filter-dropdown" id="stock-dropdown" name="catalog-filters">
-          <summary><span class="filter-current" id="stock-label-all">Todos los Estados de Stock</span><span class="filter-current" id="stock-label-in-stock">En Stock (&gt;10 ud)</span><span class="filter-current" id="stock-label-low-stock">Stock Bajo (1-10 ud)</span><span class="filter-current" id="stock-label-out-of-stock">Agotado (0 ud)</span><span class="filter-chevron" aria-hidden="true"></span></summary>
-          <div class="filter-options">
-            <label class="filter-option" for="stock-all">Todos los Estados de Stock</label>
-            <label class="filter-option" for="stock-in-stock">En Stock (&gt;10 ud)</label>
-            <label class="filter-option" for="stock-low-stock">Stock Bajo (1-10 ud)</label>
-            <label class="filter-option" for="stock-out-of-stock">Agotado (0 ud)</label>
-          </div>
-        </details>
+        <div class="filter-dropdown" id="category-filter-wrap">
+          <label class="visually-hidden" for="category-filter">Filtrar por categoría</label>
+          <select class="filter-select" id="category-filter" name="category">
+            <option value="all">Todas las Categorías</option>
+            <option value="ps5">PS5</option>
+            <option value="switch">Nintendo Switch</option>
+            <option value="xbox">Xbox Series</option>
+            <option value="digital">Digital/Físico</option>
+            <option value="collectible">Coleccionable</option>
+          </select>
+          <span class="filter-chevron" aria-hidden="true"></span>
+        </div>
+        <div class="filter-dropdown" id="stock-filter-wrap">
+          <label class="visually-hidden" for="stock-filter">Filtrar por estado de stock</label>
+          <select class="filter-select" id="stock-filter" name="stock">
+            <option value="all">Todos los Estados de Stock</option>
+            <option value="in-stock">En Stock (&gt;10 ud)</option>
+            <option value="low-stock">Stock Bajo (1-10 ud)</option>
+            <option value="out-of-stock">Agotado (0 ud)</option>
+          </select>
+          <span class="filter-chevron" aria-hidden="true"></span>
+        </div>
         <p class="catalog-count">7 productos catalogados</p>
       </section>
 
@@ -197,6 +188,5 @@
     </div>
     <p class="footer-legal">© 2025 GAME stock Iberia S.L. Todos los derechos reservados. Guía de Estilo v2.0</p>
   </footer>
-
 </body>
 </html>
