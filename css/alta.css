@@ -1,2 +1,194 @@
-/* INICIO ESTILOS DE ALTA DE PRODUCTO. */
-/* FIN ESTILOS DE ALTA DE PRODUCTO. */
+
+.contenedor-principal {
+  width: 100%;
+  max-width: 80rem;
+  flex: 1 0 auto;
+  margin: 0 auto;
+  padding: var(--spacing-24) var(--spacing-16);
+}
+
+.ruta-navegacion {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  margin-bottom: var(--spacing-16);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+}
+
+.ruta-navegacion a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.ruta-navegacion a:hover {
+  color: var(--color-brand);
+}
+
+
+.tarjeta {
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--border-radius-control);
+  background: var(--color-surface);
+}
+
+.tarjeta-formulario {
+  padding: var(--spacing-24);
+}
+
+.cabecera-tarjeta {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-16);
+  margin-bottom: var(--spacing-24);
+}
+
+.icono-tarjeta {
+  display: grid;
+  flex: 0 0 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border-radius: var(--border-radius-control);
+  background: #eff6ff;
+  color: var(--color-brand);
+}
+
+.icono-tarjeta img,
+.icono-tarjeta svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.texto-tarjeta .titulo-pagina {
+  margin: 0 0 var(--spacing-4);
+  color: var(--color-text);
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.texto-tarjeta .subtitulo-pagina {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-body);
+}
+
+
+.formulario-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--spacing-16);
+}
+
+.campo-grupo {
+  grid-column: span 6;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+
+.etiqueta-campo {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.entrada-campo {
+  width: 100%;
+  min-height: var(--size-control);
+  padding: 0 var(--spacing-12);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--border-radius-control);
+  background: var(--color-background);
+  color: var(--color-text);
+  font-size: var(--font-size-body);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.entrada-campo:focus {
+  outline: none;
+  border-color: var(--color-brand);
+  background: var(--color-surface);
+}
+
+.texto-ayuda {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+}
+
+
+.contenedor-botones {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-12);
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-16);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.boton-formulario {
+  display: inline-flex;
+  min-height: var(--size-control);
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--spacing-24);
+  border-radius: var(--border-radius-control);
+  font-size: var(--font-size-button);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.boton-cancelar {
+  border: var(--border-width) solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+}
+
+.boton-cancelar:hover {
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.boton-guardar {
+  border: var(--border-width) solid var(--color-brand);
+  background: var(--color-brand);
+  color: var(--color-surface);
+}
+
+.boton-guardar:hover {
+  border-color: var(--color-brand-hover);
+  background: var(--color-brand-hover);
+}
+
+.boton-guardar:active {
+  border-color: var(--color-brand-pressed);
+  background: var(--color-brand-pressed);
+}
+
+
+@media (min-width: 40rem) {
+  .campo-grupo {
+    grid-column: span 3;
+  }
+
+  .campo-grupo.columna {
+    grid-column: span 2; 
+  }
+
+  .columna-entera {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: 48rem) {
+  .contenedor-principal {
+    padding-right: var(--spacing-24);
+    padding-left: var(--spacing-24);
+  }
+}
