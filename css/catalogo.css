@@ -19,16 +19,6 @@
 	margin: 0 auto;
 }
 
-.filter-state {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	clip: rect(0, 0, 0, 0);
-	clip-path: inset(50%);
-	white-space: nowrap;
-	overflow: hidden;
-}
-
 .catalog-heading h1 {
 	margin: 0;
 	font-size: var(--font-size-catalog-title);
@@ -67,132 +57,46 @@
 	font-size: var(--font-size-body);
 }
 
-.filter-dropdown summary {
-	display: flex;
-	min-height: 2.5rem;
-	align-items: center;
-	justify-content: space-between;
-	gap: var(--spacing-8);
-	padding: 0 var(--spacing-12);
-	border: var(--border-width) solid var(--color-border);
-	border-radius: var(--border-radius-control);
-	background: var(--color-surface);
-	cursor: pointer;
-	list-style: none;
-}
-
-.filter-dropdown summary::-webkit-details-marker {
-	display: none;
-}
-
-.filter-chevron {
-	width: 0.5rem;
-	height: 0.5rem;
-	flex: 0 0 0.5rem;
-	transform: rotate(45deg) translateY(-0.15rem);
-	border-right: 1px solid var(--color-text-secondary);
-	border-bottom: 1px solid var(--color-text-secondary);
-}
-
-.filter-dropdown[open] .filter-chevron {
-	transform: rotate(225deg) translate(-0.15rem, -0.15rem);
-}
-
-.filter-options {
-	position: absolute;
-	top: calc(100% + var(--spacing-4));
-	left: 0;
-	z-index: 5;
-	display: grid;
+.filter-select {
+	display: block;
 	width: 100%;
-	max-height: 16rem;
-	padding: var(--spacing-4);
-	overflow-y: auto;
+	min-height: 2.5rem;
+	padding: 0 2.5rem 0 var(--spacing-12);
 	border: var(--border-width) solid var(--color-border);
 	border-radius: var(--border-radius-control);
 	background: var(--color-surface);
-	box-shadow: var(--shadow-dropdown);
-}
-
-.filter-option {
-	min-height: 2.25rem;
-	padding: var(--spacing-8) var(--spacing-12);
-	border: 0;
-	border-radius: var(--border-radius-control);
 	color: var(--color-text);
-	background: transparent;
 	font: inherit;
-	text-align: left;
 	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
 }
 
-.filter-option:hover,
-.filter-option[aria-pressed="true"] {
-	color: var(--color-brand-pressed);
-	background: var(--color-background);
-}
-
-.filter-option:focus-visible,
-.filter-dropdown summary:focus-visible {
+.filter-select:focus-visible {
 	outline: 2px solid var(--color-brand);
 	outline-offset: 2px;
 }
 
-.filter-dropdown summary > .filter-current {
-	display: none;
-	min-width: 0;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+.filter-chevron {
+	position: absolute;
+	top: 50%;
+	right: var(--spacing-12);
+	width: 0.5rem;
+	height: 0.5rem;
+	transform: translateY(-70%) rotate(45deg);
+	border-right: 1px solid var(--color-text-secondary);
+	border-bottom: 1px solid var(--color-text-secondary);
+	pointer-events: none;
 }
 
-.filter-dropdown summary:focus-visible {
-	border-radius: var(--border-radius-control);
-}
-
-.filter-dropdown:not([open]) .filter-options {
-	display: none;
-}
-
-.filter-dropdown summary {
-	min-width: 14rem;
-}
-
-#category-all:checked ~ .catalog-container #category-label-all,
-#category-ps5:checked ~ .catalog-container #category-label-ps5,
-#category-switch:checked ~ .catalog-container #category-label-switch,
-#category-xbox:checked ~ .catalog-container #category-label-xbox,
-#category-digital:checked ~ .catalog-container #category-label-digital,
-#category-collectible:checked ~ .catalog-container #category-label-collectible,
-#stock-all:checked ~ .catalog-container #stock-label-all,
-#stock-in-stock:checked ~ .catalog-container #stock-label-in-stock,
-#stock-low-stock:checked ~ .catalog-container #stock-label-low-stock,
-#stock-out-of-stock:checked ~ .catalog-container #stock-label-out-of-stock {
-	display: inline;
-}
-
-#category-all:checked ~ .catalog-container label[for="category-all"],
-#category-ps5:checked ~ .catalog-container label[for="category-ps5"],
-#category-switch:checked ~ .catalog-container label[for="category-switch"],
-#category-xbox:checked ~ .catalog-container label[for="category-xbox"],
-#category-digital:checked ~ .catalog-container label[for="category-digital"],
-#category-collectible:checked ~ .catalog-container label[for="category-collectible"],
-#stock-all:checked ~ .catalog-container label[for="stock-all"],
-#stock-in-stock:checked ~ .catalog-container label[for="stock-in-stock"],
-#stock-low-stock:checked ~ .catalog-container label[for="stock-low-stock"],
-#stock-out-of-stock:checked ~ .catalog-container label[for="stock-out-of-stock"] {
-	color: var(--color-brand-pressed);
-	background: var(--color-background);
-}
-
-#category-ps5:checked ~ .catalog-container .product-card:not([data-category="ps5"]),
-#category-switch:checked ~ .catalog-container .product-card:not([data-category="switch"]),
-#category-xbox:checked ~ .catalog-container .product-card:not([data-category="xbox"]),
-#category-digital:checked ~ .catalog-container .product-card:not([data-category="digital"]),
-#category-collectible:checked ~ .catalog-container .product-card:not([data-category="collectible"]),
-#stock-in-stock:checked ~ .catalog-container .product-card:not([data-stock="in-stock"]),
-#stock-low-stock:checked ~ .catalog-container .product-card:not([data-stock="low-stock"]),
-#stock-out-of-stock:checked ~ .catalog-container .product-card:not([data-stock="out-of-stock"]) {
+.catalog-main:has(#category-filter option[value="ps5"]:checked) .product-card:not([data-category="ps5"]),
+.catalog-main:has(#category-filter option[value="switch"]:checked) .product-card:not([data-category="switch"]),
+.catalog-main:has(#category-filter option[value="xbox"]:checked) .product-card:not([data-category="xbox"]),
+.catalog-main:has(#category-filter option[value="digital"]:checked) .product-card:not([data-category="digital"]),
+.catalog-main:has(#category-filter option[value="collectible"]:checked) .product-card:not([data-category="collectible"]),
+.catalog-main:has(#stock-filter option[value="in-stock"]:checked) .product-card:not([data-stock="in-stock"]),
+.catalog-main:has(#stock-filter option[value="low-stock"]:checked) .product-card:not([data-stock="low-stock"]),
+.catalog-main:has(#stock-filter option[value="out-of-stock"]:checked) .product-card:not([data-stock="out-of-stock"]) {
 	display: none;
 }
 
@@ -378,17 +282,17 @@
 		min-width: 0;
 	}
 
-	#category-dropdown {
+	#category-filter-wrap {
 		grid-column: 2;
 		grid-row: 1;
 	}
 
-	#stock-dropdown {
+	#stock-filter-wrap {
 		grid-column: 2;
 		grid-row: 2;
 	}
 
-	.filter-dropdown summary {
+	.filter-select {
 		min-width: 0;
 		width: 100%;
 	}
